@@ -77,11 +77,11 @@ describe('POST /api/deleteContact', () => {
     it('should respond with a json and status 200', (done) => {
 
         ( async () => {
-            const contactObj = {}
+            
             const contact = await generateContactId()
-           
-            contactObj[ contact.id ] = {
-                ...contact.data
+        
+            const contactObj = {
+                id: contact.id    
             }
 
             request(app)
