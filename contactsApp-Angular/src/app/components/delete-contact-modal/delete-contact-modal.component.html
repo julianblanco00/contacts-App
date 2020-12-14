@@ -1,0 +1,8 @@
+<h2 mat-dialog-title class="text-center">Delete contact: {{ contactToDelete.name }}</h2>
+<mat-dialog-content class="mat-typography">
+  <h3 class="text-center">Are you sure?</h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="deleteContact()" [mat-dialog-close]="true" cdkFocusInitial>Yes, delete</button>
+</mat-dialog-actions>

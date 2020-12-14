@@ -1,0 +1,33 @@
+.button-row {
+    width: 490px;
+}
+  
+.button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+    outline: none;
+}
+  
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+  
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}
+
+button{
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+}
+
+.mat-icon{
+    font-size: 30px;
+    line-height: 0;
+    height: 0;
+    width: 30px;
+}

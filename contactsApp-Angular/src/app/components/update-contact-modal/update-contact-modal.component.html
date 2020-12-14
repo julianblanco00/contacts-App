@@ -1,0 +1,67 @@
+<h1 class="text-center">Edit contact: {{ contact.name }}</h1>
+
+<div mat-dialog-content>
+    
+    <form ngNativeValidate>
+
+        <img [src]=contact.image
+             alt="Contact image"
+             (click)="getImageUrl()"
+             #contactImage>
+
+        <div *ngIf="error" class="alert text-center alert-danger mt-3" role="alert">
+            <p><strong>Error!</strong> </p> 
+            <p> <strong>Name and Phone</strong> are required.</p>
+        </div>
+
+        <mat-form-field class="m-1">
+            <mat-label>Name</mat-label>
+            <input [value]=contact.name required maxlength="20" autocomplete="off" matInput #inputName>
+            <mat-hint align="end">{{inputName.value.length}} / 20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m-1">
+            <mat-label>Phone</mat-label>
+            <input [value]=contact.personalPhone  required maxlength="20" autocomplete="off" matInput #inputPersonalPhone>
+            <mat-hint align="end">{{inputPersonalPhone.value.length}} / 20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m-1">
+            <mat-label>Phone</mat-label>
+            <input [value]=contact.workPhone  required maxlength="20" autocomplete="off" matInput #inputWorkPhone>
+            <mat-hint align="end">{{inputWorkPhone.value.length}} / 20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m-1">
+            <mat-label>Email</mat-label>
+            <input [value]=contact.email email maxlength="20" autocomplete="off" matInput #inputEmail>
+            <mat-hint align="end">{{inputEmail.value.length}} / 20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m-1">
+            <mat-label>Company</mat-label>
+            <input [value]=contact.company maxlength="20" autocomplete="off" matInput #inputCompany>
+            <mat-hint align="end">{{inputCompany.value.length}} / 20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m-1">
+            <mat-label>Address</mat-label>
+            <input [value]=contact.address maxlength="25" autocomplete="off" matInput #inputAddress>
+            <mat-hint align="end">{{inputAddress.value.length}} / 20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field class="m-1">
+            <mat-label>Birthday</mat-label>
+            <input [value]=contact.birthday maxlength="25" autocomplete="off" matInput [matDatepicker]="picker2" #inputBirthday>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+
+    </form>
+    
+</div>
+
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="validateData()" cdkFocusInitial>Save</button>
+</div>

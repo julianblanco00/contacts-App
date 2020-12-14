@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-12 col-md-6 col-lg-4 mt-4">
+            <h3>Search contact by name</h3>
+            <mat-form-field class="full-width">
+                <input 
+                    autocomplete="off"
+                    matInput
+                    (keyup)="searchByName$.next( $event.target.value )"
+                    type="search" 
+                    placeholder="Type here" 
+                    aria-label="SearchByName">
+            </mat-form-field>
+        </div>
+        
+        <div class="col-12 col-md-6 col-lg-4 mt-4">
+            <h3>Filter by email or phone number</h3>
+            <mat-form-field class="full-width">
+
+                <input 
+                    autocomplete="off"
+                    matInput
+                    (keyup)="searchByEmailOrPhone$.next( $event.target.value )"
+                    type="search" 
+                    placeholder="Type here" 
+                    aria-label="SearchByEmailOrPhone">
+            </mat-form-field>
+
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mt-4">
+            <h3>Filter by address</h3>
+            <mat-form-field class="full-width">
+
+                <input 
+                    autocomplete="off"
+                    matInput
+                    (keyup)="searchByAddress$.next( $event.target.value )"
+                    type="search" 
+                    placeholder="Type here" 
+                    aria-label="SearchByAddress">
+            </mat-form-field>
+            
+        </div>
+       
+    </div>
+</div>
+

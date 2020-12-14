@@ -1,0 +1,1 @@
+export const urlNode = 'http://localhost:3000'

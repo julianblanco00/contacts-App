@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th *ngFor="let column of displayedColumns" scope="col">{{ column | titlecase }}</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="!noContactsAdded">
+        <tr *ngFor="let id of contactsIds">
+  
+          <td>
+            <img class="profileImage" src="{{ contacts[id].image }}" alt="">
+          </td>
+          <td>{{ contacts[id].name }}</td>
+          <td>{{ contacts[id].birthday }}</td>
+          <td>{{ contacts[id].address }}</td>
+          <td>{{ contacts[id].company }}</td>
+          <td>{{ contacts[id].personalPhone }}</td>
+          <td>{{ contacts[id].workPhone }}</td>
+          <td>{{ contacts[id].email }}</td>
+  
+          <td>
+            <button (click)="editContact( contacts[id], id )" mat-mini-fab color="primary" class="mr-2">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteContact( contacts[id], id )" mat-mini-fab color="primary">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+  
+        </tr>
+      </tbody>
+
+    </table>
+
+    <div *ngIf="noContactsAdded && !searchNotFound" class="mt-5">
+      <h2 class="text-center">You don't have any contacts yet</h2>
+      <h3 class="text-center"> Start by adding a new one!</h3>
+    </div>
+
+    <div *ngIf="searchNotFound" class="mt-5">
+      <h2 class="text-center">No contacts found</h2>
+    </div>
+
+  </div>
+</div>

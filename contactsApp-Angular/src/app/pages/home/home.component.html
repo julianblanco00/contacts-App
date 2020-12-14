@@ -1,0 +1,9 @@
+<app-search-contact *ngIf="!noContactsAdded" (contactSearchResult)="loadSearchResult( $event )" ></app-search-contact>
+
+<app-table [contactsIds]="contactsIds" 
+           [displayedColumns]="displayedColumns" 
+           [contacts]="contacts"
+           [noContactsAdded]="noContactsAdded">
+</app-table>
+
+<app-add-button></app-add-button>
