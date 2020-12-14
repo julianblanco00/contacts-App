@@ -102,11 +102,9 @@ describe('POST /api/deleteContact', () => {
     it('should respond withstatus 400 if contact id is wrong', (done) => {
 
         ( async () => {
-            const contactObj = {}
-            const contact = await generateContactId()
             
-            contactObj[ '123asd123asd' ] = {
-                ...contact.data
+            const contactObj = {
+                id: '123asd123asd'
             }
 
             request(app)
