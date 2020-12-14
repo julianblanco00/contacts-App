@@ -24,7 +24,6 @@ npm run test
 ##### Load contacts data endpoint: `GET /api/getTableData` 
 
 ##### Add contact endpoint: `POST /api/addContact`, data: 
-##
 ``` js 
 {
     name: 'JohnDoe',
@@ -38,7 +37,6 @@ npm run test
 ```
 
 ##### Delete contact endpoint: `POST /api/deleteContact`, data: 
-##
 ```js
 { id: 'd567452f-fc51-47de-8fdb-1e45195215c3' }
 ```
